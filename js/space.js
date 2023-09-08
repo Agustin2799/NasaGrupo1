@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById("inputBuscar");
-    const valorInput = input.value;
+    
     const contenedor = document.getElementById("contenedor");
     const boton = document.getElementById("btnBuscar");
 
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     boton.addEventListener("click", () => {
         const contenedor = document.getElementById("contenedor");
+        const valorInput = input.value;
         contenedor.innerHTML = "";
         fetch(`https://images-api.nasa.gov/search?q=${valorInput}`)
             .then(response => response.json())
